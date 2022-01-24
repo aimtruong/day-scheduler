@@ -8,6 +8,10 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" 
+    />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -18,21 +22,113 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
+
   <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+    
+    <header class = "jumbotron">
+      <h1 class = "display-3">Work Day Scheduler</h1>
+      <p class = "lead">A simple calendar app for scheduling your work day</p>
+      <p id = "currentDay" class="lead"></p>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
+    
+
+    <div class = "container">
+
+      <!-- 9AM -->
+      <div class = "row row-cols-3">
+        <div class = "col d-flex align-items-center justify-content-center border-right border-top border-dark">9AM
+        </div>
+          <div class = "col col-9 border-top border-bottom border-light event">event
+          </div>
+            <button class = "col d-flex align-items-center justify-content-center rounded text-white bg-info">
+              <span class="oi oi-box"title="icon name" aria-hidden="true"></span>
+            </button>
+      </div>
+
+      <!-- 10AM -->
+      <div class = "row row-cols-3">
+        <div class = "col d-flex align-items-center justify-content-center border-right border-top border-dark">10AM</div>
+          <div class = "col col-9 border-top border-bottom border-light event">event</div>
+            <button class = "col d-flex align-items-center justify-content-center rounded text-white bg-info">
+              <span class="oi oi-box"></span>
+            </button>
+      </div>
+
+      <!-- 11AM -->
+      <div class = "row row-cols-3">
+        <div class = "col d-flex align-items-center justify-content-center border-right border-top border-dark">11AM</div>
+          <div class = "col col-9 border-top border-bottom border-light event">event</div>
+            <button class = "col d-flex align-items-center justify-content-center rounded text-white bg-info">
+              <span class="oi oi-box"></span>
+            </button>
+      </div>
+      
+      <!-- 12PM -->
+      <div class = "row row-cols-3">
+        <div class = "col d-flex align-items-center justify-content-center border-right border-top border-dark">12PM</div>
+          <div class = "col col-9 border-top border-bottom border-light event">event</div>
+            <button class = "col d-flex align-items-center justify-content-center rounded text-white bg-info">
+              <span class="oi oi-box"></span>
+            </button>
+      </div>
+
+      <!-- 1PM -->
+      <div class = "row row-cols-3">
+        <div class = "col d-flex align-items-center justify-content-center border-right border-top border-dark">1PM</div>
+          <div class = "col col-9 border-top border-bottom border-light event">event</div>
+            <button class = "col d-flex align-items-center justify-content-center rounded text-white bg-info">
+              <span class="oi oi-box"></span>
+            </button>
+      </div>
+
+      <!-- 2PM -->
+      <div class = "row row-cols-3">
+        <div class = "col d-flex align-items-center justify-content-center border-right border-top border-dark">2PM</div>
+          <div class = "col col-9 border-top border-bottom border-light event">event</div>
+            <button class = "col d-flex align-items-center justify-content-center rounded text-white bg-info">
+              <span class="oi oi-box"></span>
+            </button>
+      </div>
+
+      <!-- 3PM -->
+      <div class = "row row-cols-3">
+        <div class = "col d-flex align-items-center justify-content-center border-right border-top border-dark">3PM</div>
+          <div class = "col col-9 border-top border-bottom border-light event">event</div>
+            <button class = "col d-flex align-items-center justify-content-center rounded text-white bg-info">
+              <span class="oi oi-box"></span>
+            </button>
+      </div>
+
+      <!-- 4PM -->
+      <div class = "row row-cols-3">
+        <div class = "col d-flex align-items-center justify-content-center border-right border-top border-dark">4PM</div>
+          <div class = "col col-9 border-top border-bottom border-light event">event</div>
+            <button class = "col d-flex align-items-center justify-content-center rounded text-white bg-info">
+              <span class="oi oi-box"></span>
+            </button>
+      </div>
+
+      <!-- 5PM -->
+      <div class = "row row-cols-3">
+        <div class = "col d-flex align-items-center justify-content-center border-right border-top border-dark">5PM</div>
+          <div class = "col col-9 border-top border-bottom border-light event">event</div>
+            <button class = "col d-flex align-items-center justify-content-center rounded text-white bg-info">
+              <span class="oi oi-box"></span>
+            </button>
+      </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <script src = "https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src = "assets/js/script.js"></script>
+
+
   </body>
+
+
 </html>
