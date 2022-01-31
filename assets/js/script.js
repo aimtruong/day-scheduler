@@ -7,18 +7,11 @@ var currentDate = $("#currentDay");
 var header = $("header");
     header.append(currentDate);
 
-
-
-
-const store = window.localStorage;
-
 const container = $(".container");
 
 const now = moment();
 
-const currentTime = { text: moment().format("h:00 A"), hour: moment().hour() };
-
-$("#day").text(now.format("dddd MMMM DD, YYYY"));
+const currentTime = {text: moment().format("h:00 A"), hour: moment().hour()};
 
 const range = (start, end, step) => {
   return Array.from(
@@ -27,57 +20,52 @@ const range = (start, end, step) => {
   );
 };
 
-const hoursOfTheDay = Array.from(new Array(24)).map((v, i) => {
-  const text = moment().hour(i).format("h:00 A");
+const hoursOfTheDay = Array.from(new Array(9)).map((v, i) => {
+  const text = moment().hour(i).format("hA");
   const hour = moment().hour(i);
-  return { text, hour };
+  return {text, hour};
 });
 
-function color(time) {
-  return time.text === currentTime.text
-    ? [textarea's var name'].addClass("past")
-    : time.hour < now
-    ? [textarea's var name'].addClass("present")
-    : [textarea's var name'].addClass("future");
-}
 
 hoursOfTheDay.forEach((hr) => {
-  const container = $(
-    `<form data-name="${hr.text}" class="grid grid-cols-12  border-gray-500 "></form>.`
-  );
+  const eventForm = $(`<form data-name = "${hr.text}" class = "row row-cols-3 time-block"></form>`);
 
-  const time = $(
-    `<div class="flex items-center justify-center col-span-2 h-16">${hr.text}</div>`
-  );
+  const time = $(`<div class = "hour col d-flex align-items-center justify-content-center">${hr.text}</div>`);
 
-  const textArea = $(
-    `<textarea name="${
-      hr.text
-    }" maxLength="50" style="resize: none; overflow: hidden;" class="col-span-8 h-16 p-6 ${color(
-      hr
-    )}">${store.getItem(hr.text) || ""}</textarea>`
-  );
+  const textArea = $(`<textarea name = "${hr.text}" class = "description col col-9 ${color(hr)}">${window.localStorage.getItem(hr.text) || ""}</textarea>`);
 
   textArea.keydown((e) => {
-    if (e.keyCode == 13 && !e.shiftKey) {
+    if (e.keyCode == 8 && !e.shiftKey) {
       e.preventDefault();
       return false;
     }
   });
 
-  const saveButton = $(".saveBtn");
+  
+  const saveButton = $("<button type = 'submit' class = 'col d-flex align-items-center justify-content-center rounded'><span class = 'oi oi-box'></span></button>");
 
-  grid.submit((e) => {
+  eventForm.submit((e) => {
     e.preventDefault();
 
-    const value = $(`textarea[name="${hr.text}"]`).val();
+    const value = $("textarea[name='${hr.text}']").val();
 
-    store.setItem(hr.text, value);
+    window.localStorage.setItem(hr.text, value);
   });
 
-  grid.append(time);
-  grid.append(textArea);
-  grid.append(saveButton);
+  
+  function color() {
+    
+    return time.text === currentTime.text
+      ? "past"
+      : time.hour < now
+      ? "present"
+      : "future";
+  }
 
-  container.append(grid);
+  
+  eventForm.append(time);
+  eventForm.append(textArea);
+  eventForm.append(saveButton);
+
+  container.append(eventForm);
 });
