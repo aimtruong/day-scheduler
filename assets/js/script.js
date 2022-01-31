@@ -22,6 +22,7 @@ var hoursOfTheDay = Array.from(new Array(9)).map((v, i) => {
 var textDes = $(this).siblings(".description").val();
 var time = $(this).parent().attr("id");
 
+// check hour to see if time is due past or coming up
 function color() {
   return time === currentTime.text
     ? "past"
