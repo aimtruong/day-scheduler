@@ -7,20 +7,19 @@ currentDate = moment(currentDate).format("dddd, MMMM Do");
 var header = $("header");
 header.append(currentDate);
 
-var container = $(".container");
-
 var now = moment();
 
 // credits for function layout to https://codepen.io/judebloom/pen/RwGbVWB
 var currentTime = {text: moment().format("hA"), hour: moment().hour()};
 
+// to create arrays for each hour
 var hoursOfTheDay = Array.from(new Array(9)).map((v, i) => {
   var text = moment().hour(i).format("hA");
   var hour = moment().hour(i);
   return {text, hour};
 });
 
-var text = $(this).siblings(".description").val();
+var textDes = $(this).siblings(".description").val();
 var time = $(this).parent().attr("id");
 
 function color() {
@@ -31,22 +30,21 @@ function color() {
     : "future";
 }
 
+// add class of past, present, and future for bg-color changes
 hoursOfTheDay.forEach((hr) => {
-
   var textArea = document.querySelectorAll("textarea");
     textArea.addClass(color(hr));
 
   eventForm.submit((e) => {
     e.preventDefault();
 
-
-    //set items in local storage.
-    localStorage.setItem(time, text);
-    
+    //set items in local storage
+    localStorage.setItem(time, textDes);
   });
 });
 
 
+// function to loadEvents
 function loadEvents(){
   if (storedEvents) {
     for(var i = 0; i < 9; i++){
